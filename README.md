@@ -59,6 +59,8 @@ No more bogus buyers. No more wasted products. **100% payment protection.**
 | **Alicoben, Dominic** | Blockchain Integration | Sui escrow transactions, Wallet context, Balance/NFT fetching |
 | **Barillo, Will** | Testing & Documentation | Order simulation logic, Error handling, README documentation |
 
+> **📝 Note:** This project was developed collaboratively on a single laptop during our team sessions. As a result, all Git commits appear under one team member's account. The contributions listed above reflect each member's actual work on the project.
+
 ---
 
 ## 📦 Installation
