@@ -1,0 +1,58 @@
+/* WalletStatus Component Styles */
+
+.wallet-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.wallet-status__indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 4px 10px;
+    background: var(--glass-bg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+.wallet-status__indicator--connected {
+    color: var(--color-success);
+}
+
+.wallet-status__indicator--connecting {
+    color: var(--color-warning);
+}
+
+.wallet-status__indicator--error {
+    color: var(--color-error);
+}
+
+.wallet-status__indicator--disconnected {
+    color: var(--color-text-muted);
+}
+
+.wallet-status__network {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 4px 10px;
+    background: rgba(77, 162, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--color-accent-primary);
+}
+
+.wallet-status__network-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent-primary);
+    border-radius: var(--radius-full);
+}
+
+.wallet-status__label,
+.wallet-status__network-label {
+    text-transform: capitalize;
+}

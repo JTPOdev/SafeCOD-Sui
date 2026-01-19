@@ -1,0 +1,298 @@
+/* Order Flow Modal Styles */
+
+.order-flow-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--spacing-lg);
+}
+
+.order-flow {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.order-flow__close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.order-flow__close:hover {
+    color: var(--color-text-primary);
+}
+
+.order-flow__step {
+    padding: var(--spacing-xl);
+}
+
+.order-flow__step--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    text-align: center;
+    padding: var(--spacing-3xl);
+}
+
+.order-flow__header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.order-flow__header h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.order-flow__header p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* Product Preview */
+.order-flow__product {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.order-flow__product img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.order-flow__product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.order-flow__seller {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent-primary);
+    text-transform: uppercase;
+}
+
+.order-flow__product-info h3 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Summary */
+.order-flow__summary {
+    background: var(--glass-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.order-flow__row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.order-flow__row--total {
+    border-top: 1px solid var(--glass-border);
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.order-flow__total {
+    color: var(--color-success);
+    font-size: var(--font-size-lg);
+}
+
+/* Notice */
+.order-flow__notice {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: rgba(77, 162, 255, 0.1);
+    border: 1px solid rgba(77, 162, 255, 0.2);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.order-flow__notice svg {
+    flex-shrink: 0;
+    color: var(--color-accent-primary);
+}
+
+.order-flow__notice p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* Error */
+.order-flow__error {
+    padding: var(--spacing-md);
+    background: rgba(255, 61, 113, 0.1);
+    border: 1px solid rgba(255, 61, 113, 0.2);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+}
+
+/* Actions */
+.order-flow__actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.order-flow__actions button {
+    flex: 1;
+    padding: var(--spacing-md);
+}
+
+/* Order Tracker */
+.order-tracker {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+}
+
+.order-tracker__step {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    position: relative;
+    opacity: 0.4;
+    transition: opacity var(--transition-base);
+}
+
+.order-tracker__step--active {
+    opacity: 1;
+}
+
+.order-tracker__step--current {
+    opacity: 1;
+}
+
+.order-tracker__step--current .order-tracker__icon {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.order-tracker__icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    border-radius: var(--radius-full);
+}
+
+.order-tracker__step--active .order-tracker__icon {
+    background: rgba(0, 214, 143, 0.2);
+}
+
+.order-tracker__label {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.order-tracker__line {
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    width: 2px;
+    height: calc(100% + var(--spacing-md));
+    background: var(--glass-border);
+}
+
+.order-tracker__line--active {
+    background: var(--color-success);
+}
+
+/* Confirm Section */
+.order-flow__confirm-section {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: rgba(0, 214, 143, 0.1);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.order-flow__confirm-section h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.order-flow__confirm-section p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Success */
+.order-flow__success {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.order-flow__success-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+}
+
+.order-flow__success h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-success);
+    margin-bottom: var(--spacing-sm);
+}
+
+.order-flow__success p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+}
